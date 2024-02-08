@@ -62,7 +62,7 @@ npm i express
 touch first_task.js
 ```
 
-- edit index.js as follows:
+- edit firt_task.js as follows:
 
 ```js
 const express = require('express');
@@ -80,7 +80,7 @@ app.listen(PORT, () => {
 });
 ```
 
-- as we can see in the first task we reuire express then take an instance of
+- as we can see in the first task we require express then take an instance of
   express
 - we define port in our simple task as const while in more advanced cases we get
   it from config file
@@ -93,7 +93,7 @@ app.listen(PORT, () => {
 
 ```json
   "scripts": {
-    "task1": "node task1.js"
+    "first_task": "node first_task.js"
   },
 ```
 
@@ -104,4 +104,64 @@ npm run second_task
 ```
 
 - now you can use thunder, httpie, or postman or other similar programs or
-  packages to test the http client end point
+  packages to test the http client end point using `get` method and the link
+  `localhost:3000`
+
+## Task 2:
+
+- In order to implement the second task "RESTful API endpoint /patients that
+  returns a list of dummy patient data (name, age, medical history)" create the
+  second_task.js file
+
+```sh
+touch second_task.js
+```
+
+- edit second_task.js as follows:
+
+```js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+const patients = [
+  { name: 'John Doe', age: 35, medical_history: 'Hypertension' },
+  { name: 'Jane Smith', age: 28, medical_history: 'Diabetes' },
+  { name: 'Michael Johnson', age: 42, medical_history: 'Asthma' }
+];
+
+app.get('/patients', (req, res) => {
+  res.json(patients);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+```
+
+- as we can see in the second task we require express then take an instance of
+  express
+- we define port in our simple task as const while in more advanced cases we get
+  it from config file
+- create our single end point
+- then begin listening on the target port
+- in order to run our task we edit the scripts sections in the package.json
+  while we can execute it using node directly but scripts are more orgnized
+  method
+- edit the scripts section in the package.json
+
+```json
+  "scripts": {
+    "second_task": "node second_task.js"
+  },
+```
+
+- we can run the task
+
+```sh
+npm run second_task
+```
+
+- now you can use thunder, httpie, or postman or other similar programs or
+  packages to test the http client end point using `get` method and the link
+  `localhost:3000/patients`

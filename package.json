@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "first_task": "node first_task.js",
-    "second_task": "second_task.js"
+    "second_task": "node second_task.js"
   },
   "author": "mostafa adawy",
   "license": "ISC",
