@@ -400,3 +400,15 @@ app.listen(PORT, () => {
 
 - - you can test as previous example with the same links after runing
     `npm run second_task_sql`
+
+## Note that this is considered a simple example
+
+the real case requires more complectated issues as follows
+
+- clean code and code structure so we can use `nestjs`
+- software design architecture for separatation of concerens such as MVC
+- authentication using passport or jwt
+- autherization
+- sentization
+- validation
+- other security packages for rate throttling and etc
